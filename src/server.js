@@ -12,6 +12,6 @@ server.use(bodyParser.urlencoded({extended: false}))
 
 server.use('/api', routes)
 
-server.listen(p3000, ()=>{
+server.listen(3000, ()=>{
     console.log(`Servidor rodando`)
 })
