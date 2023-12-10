@@ -24,7 +24,7 @@ module.exports = {
     },
     insert: (title, descript, url, download, img)=>{
         return new Promise((accept, reject)=>{
-            db.query('INSERT INTO projects (title, descript, url, download, img) VALUES (?,?,?,?,?)',
+            db.query('INSERT INTO projects (img, title, descript, url, download) VALUES (?,?,?,?,?)',
              [img, title, descript, url, download], (error, results)=>{
                 if(error) {reject(error); return; }
                     accept(results.insertID)

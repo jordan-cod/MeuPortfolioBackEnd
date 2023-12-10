@@ -54,15 +54,15 @@ module.exports = {
         let download = req.body.download
         let img = req.body.img
 
-        if(title && descript && url && download && img){
-            let project_ID = await ProjectService.insert(title, descript, url, download, img)
+        if(img && title && descript && url && download){
+            let project_ID = await ProjectService.insert(img, title, descript, url, download)
             json.result = {
                 id: project_ID,
+                img,
                 title,
                 descript,
                 url,
-                download,
-                img
+                download
             }
         }else {
             json.error = 'Campos não enviados';
