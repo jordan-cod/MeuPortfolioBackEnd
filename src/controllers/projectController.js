@@ -68,6 +68,7 @@ module.exports = {
             json.error = 'Campos não enviados';
         }
         res.json(json)
+        res.send(json)
     },
     edit: async (req, res)=>{
         let json = {error: '', result: []}
