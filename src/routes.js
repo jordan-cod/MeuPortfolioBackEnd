@@ -6,7 +6,7 @@ const projectController = require("./controllers/projectController")
 
 router.get('/projects', ProjectController.searchALL)
 router.get('/project/:id', ProjectController.searchONE)
-router.post('/projects', ProjectController.insert)
+router.post('/project', ProjectController.insert)
 router.put('/project/:id', projectController.edit)
 router.delete('/project/:id', projectController.delete)
 

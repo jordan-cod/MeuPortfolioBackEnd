@@ -22,7 +22,7 @@ module.exports = {
             })
         })
     },
-    insert: (title, descript, url, img, download)=>{
+    insert: (title, descript, url, download, img)=>{
         return new Promise((accept, reject)=>{
             db.query('INSERT INTO projects (img, title, descript, url, download) VALUES (?,?,?,?,?); SELECT SCOPE_IDENTITY();',
              [img, title, descript, url, download], (error, results)=>{
