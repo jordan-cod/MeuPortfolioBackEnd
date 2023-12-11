@@ -27,7 +27,7 @@ module.exports = {
             db.query('INSERT INTO projects OUTPUT Inserted.id (img, title, descript, url, download) VALUES (?,?,?,?,?);',
              [img, title, descript, url, download], (error, results)=>{
                 if(error) {reject(error); return; }
-                    accept(results.Inserted.id)
+                    accept(results.id)
             })
         })
     },
