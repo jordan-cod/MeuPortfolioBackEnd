@@ -24,10 +24,10 @@ module.exports = {
     },
     insert: (title, descript, url, download, img)=>{
         return new Promise((accept, reject)=>{
-            db.query('INSERT INTO projects (img, title, descript, url, download) VALUES (?,?,?,?,?); SELECT SCOPE_IDENTITY();',
+            db.query('INSERT INTO projects OUTPUT Inserted.id (img, title, descript, url, download) VALUES (?,?,?,?,?);',
              [img, title, descript, url, download], (error, results)=>{
                 if(error) {reject(error); return; }
-                    accept(results.project_ID)
+                    accept(results.Inserted.id)
             })
         })
     },
