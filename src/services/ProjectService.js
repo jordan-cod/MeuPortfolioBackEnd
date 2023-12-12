@@ -22,12 +22,12 @@ module.exports = {
             })
         })
     },
-    insert: (title, descript, url, download, img)=>{
+    insert: (title, descript, url, img, download)=>{
         return new Promise((accept, reject)=>{
-            db.query('INSERT INTO projects (img, title, descript, url, download) VALUES (?,?,?,?,?)',
+            db.query('INSERT INTO projects (img, title, descript, url, download) VALUES (?,?,?,?,?);',
              [img, title, descript, url, download], (error, results)=>{
                 if(error) {reject(error); return; }
-                    accept(results.insertID)
+                    accept(results.insertid)
             })
         })
     },
