@@ -113,6 +113,8 @@ module.exports = {
                 return res.json({
                     sucess: 1,
                     message: 'login successfully',
+                    user: results._user,
+                    email: results._email,
                     token: jsontoken
                 })
             }
