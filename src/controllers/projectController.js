@@ -12,6 +12,7 @@ module.exports = {
                 img: projects[i].img,
                 title: projects[i].title,
                 descript: projects[i].descript,
+                descript_ptbr: projects[i].descript_ptbr,
                 url: projects[i].url,
                 download: projects[i].download
             })
@@ -25,23 +26,6 @@ module.exports = {
 
         if(project){
             json.result = project
-        }
-        res.json(json)
-    },
-    searchALL: async (req, res)=>{
-        let json = {error: '', result: []}
-
-        let projects = await ProjectService.searchALL()
-
-        for(let i in projects){
-            json.result.push({
-                id: projects[i].id,
-                img: projects[i].img,
-                title: projects[i].title,
-                descript: projects[i].descript,
-                url: projects[i].url,
-                download: projects[i].download
-            })
         }
         res.json(json)
     },
