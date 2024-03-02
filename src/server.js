@@ -16,6 +16,6 @@ server.use('/api', routes)
 
 server.use(express.json())
 
-server.listen(3000, ()=>{
+server.listen(80, ()=>{
     console.log(`Servidor rodando`)
 })
