@@ -14,7 +14,8 @@ module.exports = {
                 descript: projects[i].descript,
                 descript_ptbr: projects[i].descript_ptbr,
                 url: projects[i].url,
-                download: projects[i].download
+                download: projects[i].download,
+                category: projects[i].category
             })
         }
         res.json(json)
